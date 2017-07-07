@@ -1,6 +1,6 @@
 Excel file generator
 
-The project is written in C# and the goal is to make a Console applicatio that generates
+The project is written in C# and the goal is to make a Console application that generates
 an Excel file with name scores.xlsx. The sheet is populated with 100 rows of randomly generated data.
 I have used Microsoft Excel 14.0 Object library.
 I have created a class Excel for handling the operations with the Excel file (create, edit, save, close).
