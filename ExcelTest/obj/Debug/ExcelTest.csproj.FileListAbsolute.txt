@@ -1,0 +1,8 @@
+c:\users\mighty\documents\visual studio 2015\Projects\ExcelTest\ExcelTest\bin\Debug\ExcelTest.exe.config
+C:\Users\Mighty\Documents\Visual Studio 2015\Projects\ExcelTest\ExcelTest\bin\Debug\ExcelTest.exe
+C:\Users\Mighty\Documents\Visual Studio 2015\Projects\ExcelTest\ExcelTest\bin\Debug\ExcelTest.pdb
+C:\Users\Mighty\Documents\Visual Studio 2015\Projects\ExcelTest\ExcelTest\obj\Debug\ExcelTest.csprojResolveAssemblyReference.cache
+C:\Users\Mighty\Documents\Visual Studio 2015\Projects\ExcelTest\ExcelTest\obj\Debug\Interop.VBIDE.dll
+C:\Users\Mighty\Documents\Visual Studio 2015\Projects\ExcelTest\ExcelTest\obj\Debug\ExcelTest.csproj.ResolveComReference.cache
+C:\Users\Mighty\Documents\Visual Studio 2015\Projects\ExcelTest\ExcelTest\obj\Debug\ExcelTest.exe
+C:\Users\Mighty\Documents\Visual Studio 2015\Projects\ExcelTest\ExcelTest\obj\Debug\ExcelTest.pdb
