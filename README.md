@@ -1,4 +1,105 @@
-﻿using Microsoft.Office.Interop.Excel;
+Excel file generator
+
+The project is written in C# and the goal is to make a Console applicatio that generates
+an Excel file with name scores.xlsx. The sheet is populated with 100 rows of randomly generated data.
+I have used Microsoft Excel 14.0 Object library.
+I have created a class Excel for handling the operations with the Excel file (create, edit, save, close).
+The directory for saving the file is determined by reflection and the file is saved in the directory of ExcelTest.exe file.
+The Excel class has functions for reading cell, writing into cell, saving the file, saving file with name (saveAs), 
+creating new file, creating new sheet and get a work sheed.
+There are four columns: name, age, score and average score
+For filling the names I have used a dictionary and randomizer so that evry 10 names are unique and are not repeating.
+For the age and score columns I just used randomizer for randomizing the values.
+For changing the colors for the odd rows I used For Loop. 
+
+Code :
+
+
+using Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+using _Excel = Microsoft.Office.Interop.Excel;
+
+namespace ExcelTest
+{
+    class Excel
+    {
+        private string path = "";
+        private _Application excel = new _Excel.Application();
+        private Workbook wb;
+        Worksheet ws;        
+
+        public Excel()
+        {
+            
+        }
+
+        public Excel(string path, int sheet)
+        {
+            this.path = path;
+            wb = excel.Workbooks.Open(path);
+            ws = wb.Worksheets[sheet];            
+        }
+        
+        public Worksheet GetWorksheet
+        {
+            get
+            {
+                return this.ws;
+            }           
+        }        
+
+        public string ReadCell (int i, int j)
+        {
+            if (ws.Cells[i,j].Value2 != null)
+            {
+                return ws.Cells[i, j].Value2;
+            }
+            return "";
+        }
+
+        public void WriteCell (int i, int j, string s)
+        {            
+            ws.Cells[i, j].Value2 = s;
+        }
+
+        public void Save()
+        {
+            wb.Save();
+        }
+
+        public void SaveAs(string path)
+        {
+            try
+            {
+                wb.SaveAs(path);
+            }
+            catch (COMException ex)
+            {
+                int error = ex.ErrorCode;                
+            }
+            
+        }
+
+        public void Close()
+        {
+            wb.Close(0);
+            excel.Quit();
+        }
+
+        public void CreateNewFile()
+        {
+            this.wb = excel.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
+            this.ws = wb.Worksheets[1];
+        }
+
+        public void CreateNewSheet()
+        {
+            Worksheet tempSheet = wb.Worksheets.Add(After: ws);
+        }
+    }
+}
+
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -137,3 +238,5 @@ namespace ExcelTest
         }
     }
 }
+
+
